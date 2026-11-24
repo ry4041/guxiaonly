@@ -3,24 +3,33 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
+<meta name="description" content="TheLgg_ × TheXTY_ Duo Archive">
 <title>TheLgg_ × TheXTY_ | Duo Archive</title>
 
 <style>
 :root {
-  --bg: #fff;
+  --bg: #ffffff;
   --ink: #252725;
   --muted: #92958e;
   --line: #e9eae6;
+
   --green: #91ad91;
   --green-dark: #456b4e;
   --green-light: #edf3eb;
+
   --red: #c47770;
   --red-dark: #984e4b;
   --red-light: #f7eeeb;
-  --system-font: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  --system-font:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 * {
@@ -29,9 +38,9 @@
 }
 
 html, body {
-  margin: 0;
   width: 100%;
   height: 100%;
+  margin: 0;
   overflow: hidden;
 }
 
@@ -39,6 +48,7 @@ body {
   background: #fff;
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -46,15 +56,27 @@ img {
   max-width: 100%;
 }
 
+/* MAIN PAGE */
+
 .page {
   width: 100%;
   height: 100vh;
   height: 100dvh;
-  padding: 18px 30px 12px;
+
+  padding: 16px 28px 10px;
+
   display: grid;
-  grid-template-rows: 42px 84px minmax(0, 1fr) 22px;
-  gap: 11px;
+
+  grid-template-rows:
+    38px
+    75px
+    minmax(0, 1fr)
+    20px;
+
+  gap: 9px;
+
   overflow: hidden;
+  background: #fff;
 }
 
 /* HEADER */
@@ -63,13 +85,16 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   border-bottom: 1px solid var(--line);
+  min-width: 0;
 }
 
 .logo {
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 1.5px;
+  white-space: nowrap;
 }
 
 .green { color: var(--green-dark); }
@@ -77,7 +102,8 @@ img {
 
 .header-right {
   display: flex;
-  gap: 20px;
+  gap: 18px;
+
   color: var(--muted);
   font-size: 9px;
   letter-spacing: 1.5px;
@@ -104,6 +130,7 @@ img {
 
 .intro h1 {
   margin: 5px 0 0;
+
   font-size: clamp(24px, 3vw, 39px);
   letter-spacing: -1.5px;
   line-height: 1.1;
@@ -123,20 +150,26 @@ img {
 .intro-right {
   text-align: right;
   color: var(--muted);
+
   font-size: 9px;
   line-height: 1.8;
   letter-spacing: 1.5px;
+  white-space: nowrap;
 }
 
 /* MAIN GRID */
 
 .main {
+  min-width: 0;
   min-height: 0;
+
   display: grid;
+
   grid-template-columns:
-    minmax(205px, 0.83fr)
+    minmax(0, .83fr)
     minmax(0, 2fr)
-    minmax(205px, 0.83fr);
+    minmax(0, .83fr);
+
   gap: 13px;
 }
 
@@ -145,18 +178,21 @@ img {
 .profile {
   min-width: 0;
   min-height: 0;
+
   border: 1px solid var(--line);
   padding: 13px;
+
   display: flex;
   flex-direction: column;
+
   overflow: hidden;
 }
 
-.profile.green-profile {
+.green-profile {
   border-top: 3px solid var(--green);
 }
 
-.profile.red-profile {
+.red-profile {
   border-top: 3px solid var(--red);
 }
 
@@ -164,6 +200,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   font-size: 8px;
   letter-spacing: 1.5px;
   color: var(--muted);
@@ -175,10 +212,13 @@ img {
 
 .profile-photo {
   width: 100%;
-  height: clamp(125px, 23vh, 205px);
+  height: clamp(110px, 21vh, 190px);
+
   margin: 8px auto;
+
   background: #fff;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .profile-photo img {
@@ -189,15 +229,16 @@ img {
 
 .profile-name {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 5px;
 }
 
 .profile-name h2 {
   margin: 0;
+
   font-size: clamp(18px, 1.8vw, 25px);
-  letter-spacing: -0.8px;
+  letter-spacing: -.8px;
 }
 
 .profile-role {
@@ -214,36 +255,50 @@ img {
   color: var(--red-dark);
 }
 
+/* FACTS */
+
 .profile-facts {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 10px 8px;
+
   padding: 12px 0;
   margin-top: 12px;
+
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
+.fact {
+  min-width: 0;
+}
+
 .fact small {
   display: block;
+
   color: var(--muted);
   font-size: 7px;
   letter-spacing: 1px;
+
   margin-bottom: 4px;
   text-transform: uppercase;
 }
 
 .fact strong {
   display: block;
+
   font-size: 9px;
   line-height: 1.45;
   font-weight: 650;
+
   overflow-wrap: anywhere;
 }
 
 .profile-description {
   font-size: 9px;
   line-height: 1.8;
+
   color: #74786f;
   margin: 11px 0;
 }
@@ -252,6 +307,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+
   margin-top: auto;
 }
 
@@ -276,18 +332,25 @@ img {
 .center {
   min-width: 0;
   min-height: 0;
+
   display: grid;
+
   grid-template-rows:
     minmax(0, 1.1fr)
-    minmax(0, 0.9fr)
+    minmax(0, .9fr)
     68px;
+
   gap: 10px;
 }
+
+/* MAIN VISUAL */
 
 .main-visual {
   position: relative;
   min-height: 0;
+
   overflow: hidden;
+
   background: #f7f7f5;
   border: 1px solid var(--line);
 }
@@ -295,16 +358,21 @@ img {
 .main-visual img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center;
 }
 
 .visual-label {
   position: absolute;
+
   left: 13px;
   bottom: 12px;
+
   padding: 7px 11px;
-  background: rgba(255,255,255,.88);
+
+  background: rgba(255,255,255,.9);
+
   font-size: 8px;
   letter-spacing: 1.5px;
 }
@@ -313,7 +381,10 @@ img {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
   gap: 9px;
   min-height: 0;
 }
@@ -321,8 +392,10 @@ img {
 .gallery-item {
   min-width: 0;
   min-height: 0;
+
   position: relative;
   overflow: hidden;
+
   border: 1px solid var(--line);
   background: #f8f8f7;
 }
@@ -330,21 +403,21 @@ img {
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform .4s ease;
-}
 
-.gallery-item:hover img {
-  transform: scale(1.04);
+  object-fit: cover;
 }
 
 .gallery-caption {
   position: absolute;
+
   left: 0;
   right: 0;
   bottom: 0;
+
   padding: 7px 5px;
-  background: rgba(255,255,255,.88);
+
+  background: rgba(255,255,255,.9);
+
   font-size: 7px;
   text-align: center;
   letter-spacing: .5px;
@@ -355,6 +428,7 @@ img {
 .duo-statement {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   border: 1px solid var(--line);
   min-height: 0;
 }
@@ -370,6 +444,7 @@ img {
 
 .duo-side small {
   display: block;
+
   font-size: 7px;
   letter-spacing: 1.5px;
   color: var(--muted);
@@ -377,6 +452,7 @@ img {
 
 .duo-side strong {
   display: block;
+
   font-size: 11px;
   margin: 5px 0 3px;
 }
@@ -384,6 +460,7 @@ img {
 .duo-side p {
   font-size: 8px;
   line-height: 1.5;
+
   color: var(--muted);
   margin: 0;
 }
@@ -394,7 +471,9 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   border-top: 1px solid var(--line);
+
   color: var(--muted);
   font-size: 7px;
   letter-spacing: 1.2px;
@@ -404,13 +483,19 @@ img {
   color: var(--ink);
 }
 
-/* SHORT SCREEN */
+/* SHORT DESKTOP */
 
 @media (max-height: 700px) and (min-width: 761px) {
   .page {
-    padding: 10px 22px 8px;
-    grid-template-rows: 34px 65px minmax(0, 1fr) 18px;
-    gap: 7px;
+    padding: 9px 20px 7px;
+
+    grid-template-rows:
+      32px
+      60px
+      minmax(0, 1fr)
+      17px;
+
+    gap: 6px;
   }
 
   .main {
@@ -422,7 +507,7 @@ img {
   }
 
   .profile-photo {
-    height: clamp(100px, 19vh, 145px);
+    height: clamp(90px, 17vh, 145px);
   }
 
   .profile-facts {
@@ -436,45 +521,204 @@ img {
 
   .center {
     gap: 7px;
-    grid-template-rows: minmax(0, 1.1fr) minmax(0, .9fr) 58px;
+
+    grid-template-rows:
+      minmax(0, 1.1fr)
+      minmax(0, .9fr)
+      55px;
   }
 }
 
 /* MOBILE LANDSCAPE */
 
-@media (max-width: 760px) {
+@media (max-width: 760px) and (orientation: landscape) {
   .page {
-    min-width: 900px;
-    padding: 10px 16px 8px;
-    grid-template-rows: 35px 65px minmax(0, 1fr) 18px;
-    gap: 7px;
+    padding: 7px 12px 6px;
+
+    grid-template-rows:
+      29px
+      47px
+      minmax(0, 1fr)
+      15px;
+
+    gap: 5px;
   }
 
   .main {
-    grid-template-columns: 210px minmax(0, 1fr) 210px;
-    gap: 9px;
+    grid-template-columns:
+      minmax(130px, .8fr)
+      minmax(0, 2fr)
+      minmax(130px, .8fr);
+
+    gap: 7px;
   }
 
   .profile {
-    padding: 9px;
+    padding: 7px;
   }
 
   .profile-photo {
-    height: 19vh;
+    height: 15vh;
+    margin: 5px auto;
   }
 
   .profile-facts {
-    padding: 8px 0;
-    gap: 7px;
+    padding: 6px 0;
+    gap: 6px;
+    margin-top: 7px;
   }
 
   .profile-description {
-    font-size: 8px;
+    font-size: 7px;
+    line-height: 1.5;
+    margin: 6px 0;
+  }
+
+  .profile-name h2 {
+    font-size: 17px;
   }
 
   .center {
+    gap: 6px;
+
+    grid-template-rows:
+      minmax(0, 1.1fr)
+      minmax(0, .9fr)
+      47px;
+  }
+
+  .duo-side {
+    padding: 5px 8px;
+  }
+
+  .duo-side strong {
+    font-size: 9px;
+    margin: 3px 0;
+  }
+
+  .duo-side p {
+    font-size: 7px;
+  }
+
+  .header-right {
+    gap: 9px;
+    font-size: 7px;
+  }
+
+  .intro h1 {
+    font-size: 23px;
+  }
+
+  .gallery {
+    gap: 5px;
+  }
+}
+
+/* MOBILE PORTRAIT: ROTATE TO LANDSCAPE */
+
+@media (max-width: 760px) and (orientation: portrait) {
+  .page {
+    position: fixed;
+
+    width: 100dvh;
+    height: 100vw;
+
+    top: 0;
+    left: 100vw;
+
+    transform: rotate(90deg);
+    transform-origin: top left;
+
+    padding: 7px 12px 6px;
+
+    grid-template-rows:
+      29px
+      47px
+      minmax(0, 1fr)
+      15px;
+
+    gap: 5px;
+  }
+
+  .main {
+    grid-template-columns:
+      minmax(130px, .8fr)
+      minmax(0, 2fr)
+      minmax(130px, .8fr);
+
     gap: 7px;
-    grid-template-rows: minmax(0, 1.1fr) minmax(0, .9fr) 58px;
+  }
+
+  .profile {
+    padding: 7px;
+  }
+
+  .profile-photo {
+    height: 15vh;
+    margin: 5px auto;
+  }
+
+  .profile-facts {
+    padding: 6px 0;
+    gap: 6px;
+    margin-top: 7px;
+  }
+
+  .profile-description {
+    font-size: 7px;
+    line-height: 1.5;
+    margin: 6px 0;
+  }
+
+  .profile-name h2 {
+    font-size: 17px;
+  }
+
+  .center {
+    gap: 6px;
+
+    grid-template-rows:
+      minmax(0, 1.1fr)
+      minmax(0, .9fr)
+      47px;
+  }
+
+  .duo-side {
+    padding: 5px 8px;
+  }
+
+  .duo-side strong {
+    font-size: 9px;
+    margin: 3px 0;
+  }
+
+  .duo-side p {
+    font-size: 7px;
+  }
+
+  .header-right {
+    gap: 9px;
+    font-size: 7px;
+  }
+
+  .intro h1 {
+    font-size: 23px;
+  }
+
+  .gallery {
+    gap: 5px;
+  }
+}
+
+/* VERY SHORT SCREENS */
+
+@media (max-height: 480px) {
+  .profile-description {
+    line-height: 1.4;
+  }
+
+  .profile-facts {
+    gap: 5px;
   }
 }
 </style>
@@ -505,9 +749,11 @@ img {
   <section class="intro">
     <div class="intro-left">
       <div class="eyebrow">A STUDY OF TWO · GREEN × RED</div>
+
       <h1>
         TheLgg_ <span>×</span> TheXTY_
       </h1>
+
       <div class="intro-description">
         Two different personalities, two signature colors,
         and a collection of moments worth remembering.
@@ -535,8 +781,12 @@ img {
       </div>
 
       <div class="profile-photo">
-        <img src="./IMG_2300.png"
-             alt="TheLgg profile artwork">
+        <img
+          src="./IMG_2300.png"
+          alt="TheLgg profile artwork"
+          loading="lazy"
+          decoding="async"
+        >
       </div>
 
       <div class="profile-name">
@@ -549,6 +799,7 @@ img {
       </div>
 
       <div class="profile-facts">
+
         <div class="fact">
           <small>Birthday</small>
           <strong>Nov 30</strong>
@@ -578,6 +829,7 @@ img {
           <small>Role</small>
           <strong>XTY's Co-streamer</strong>
         </div>
+
       </div>
 
       <p class="profile-description">
@@ -594,52 +846,74 @@ img {
 
     </article>
 
-    <!-- CENTER CONTENT -->
+    <!-- CENTER -->
 
     <section class="center">
 
       <!-- MAIN VISUAL: IMAGE 3 -->
 
       <div class="main-visual">
-        <img src="./IMG_2321.jpeg"
-             alt="TheLgg and TheXTY together">
+
+        <img
+          src="./IMG_2321.jpeg"
+          alt="TheLgg and TheXTY together"
+          fetchpriority="high"
+          decoding="async"
+        >
 
         <div class="visual-label">
           THE TWO OF US · MAIN VISUAL
         </div>
+
       </div>
 
-      <!-- IMAGE ARCHIVE: IMAGES 4-7 -->
+      <!-- FOUR UNIQUE IMAGES -->
 
       <div class="gallery">
 
         <div class="gallery-item">
-          <img src="./IMG_3850.png"
-               alt="Under the same sky">
+          <img
+            src="./IMG_3850.png"
+            alt="Under the same sky"
+            loading="lazy"
+            decoding="async"
+          >
           <div class="gallery-caption">
             01 / UNDER THE SAME SKY
           </div>
         </div>
 
         <div class="gallery-item">
-          <img src="./未命名作品.jpeg"
-               alt="Halloween illustration">
+          <img
+            src="./未命名作品.jpeg"
+            alt="Halloween illustration"
+            loading="lazy"
+            decoding="async"
+          >
           <div class="gallery-caption">
             02 / HALLOWEEN
           </div>
         </div>
 
         <div class="gallery-item">
-          <img src="./a78567f5b4db48b15e0fbd5525a153.jpeg"
-               alt="Little figures">
+          <img
+            src="./a78567f5b4db48b15e0fbd5525a153.jpeg"
+            alt="Little figures"
+            loading="lazy"
+            decoding="async"
+          >
           <div class="gallery-caption">
             03 / LITTLE FIGURES
           </div>
         </div>
 
         <div class="gallery-item">
-          <img src="./93af518399fe0130f734c80f1bb454.jpeg"
-               alt="Minecraft gameplay">
+          <img
+            src="./93af518399fe0130f734c80f1bb454.jpeg"
+            alt="Minecraft gameplay"
+            loading="lazy"
+            decoding="async"
+          >
           <div class="gallery-caption">
             04 / IN-GAME MEMORY
           </div>
@@ -653,14 +927,26 @@ img {
 
         <div class="duo-side">
           <small>THE GREEN SIDE</small>
-          <strong class="green">The Green Reaper</strong>
-          <p>Quick instincts · FPS talent · Matcha green</p>
+
+          <strong class="green">
+            The Green Reaper
+          </strong>
+
+          <p>
+            Quick instincts · FPS talent · Matcha green
+          </p>
         </div>
 
         <div class="duo-side">
           <small>THE RED SIDE</small>
-          <strong class="red">The Supreme Boss</strong>
-          <p>Master of Tianmen · Bilibili · 10K Captains</p>
+
+          <strong class="red">
+            The Supreme Boss
+          </strong>
+
+          <p>
+            Master of Tianmen · Bilibili · 10K Captains
+          </p>
         </div>
 
       </div>
@@ -677,8 +963,12 @@ img {
       </div>
 
       <div class="profile-photo">
-        <img src="./IMG_2301.png"
-             alt="TheXTY profile artwork">
+        <img
+          src="./IMG_2301.png"
+          alt="TheXTY profile artwork"
+          loading="lazy"
+          decoding="async"
+        >
       </div>
 
       <div class="profile-name">
@@ -743,9 +1033,17 @@ img {
   <!-- FOOTER -->
 
   <footer class="footer">
+
     <strong>TheLgg_ × TheXTY_</strong>
-    <span>A FAN-MADE ARCHIVE · MADE WITH ADMIRATION</span>
-    <span>END OF FILE · 001</span>
+
+    <span>
+      A FAN-MADE ARCHIVE · MADE WITH ADMIRATION
+    </span>
+
+    <span>
+      END OF FILE · 001
+    </span>
+
   </footer>
 
 </div>
