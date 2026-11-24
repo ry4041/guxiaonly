@@ -721,6 +721,159 @@ img {
     gap: 5px;
   }
 }
+
+/* ===== MOBILE LANDSCAPE FULL SCREEN FIX ===== */
+
+@media (orientation: landscape) and (max-width: 950px) {
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .page {
+    width: 100%;
+    min-width: 0;
+    height: 100dvh;
+    padding: 7px 12px 5px;
+    grid-template-rows: 28px 55px minmax(0, 1fr) 15px;
+    gap: 5px;
+    overflow: hidden;
+  }
+
+  .header-right {
+    gap: 9px;
+    font-size: 7px;
+  }
+
+  .logo {
+    font-size: 12px;
+  }
+
+  .intro h1 {
+    font-size: 23px;
+  }
+
+  .intro-description {
+    font-size: 8px;
+  }
+
+  .main {
+    min-width: 0;
+    grid-template-columns:
+      minmax(0, .85fr)
+      minmax(0, 2fr)
+      minmax(0, .85fr);
+    gap: 7px;
+  }
+
+  .profile {
+    min-width: 0;
+    padding: 7px;
+  }
+
+  .profile-photo {
+    height: 14vh;
+    min-height: 55px;
+    max-height: 95px;
+    margin: 5px auto;
+  }
+
+  .profile-name h2 {
+    font-size: 16px;
+  }
+
+  .profile-facts {
+    gap: 5px 4px;
+    padding: 7px 0;
+    margin-top: 7px;
+  }
+
+  .fact small {
+    font-size: 6px;
+  }
+
+  .fact strong {
+    font-size: 8px;
+  }
+
+  .profile-description {
+    font-size: 7px;
+    line-height: 1.5;
+    margin: 6px 0;
+  }
+
+  .tag {
+    font-size: 6px;
+    padding: 4px;
+  }
+
+  .center {
+    min-width: 0;
+    grid-template-rows:
+      minmax(0, 1.1fr)
+      minmax(0, .9fr)
+      43px;
+    gap: 6px;
+  }
+
+  .gallery {
+    gap: 6px;
+  }
+
+  .gallery-caption {
+    font-size: 6px;
+    padding: 4px 2px;
+  }
+
+  .duo-side {
+    padding: 5px 7px;
+  }
+
+  .duo-side strong {
+    font-size: 9px;
+  }
+
+  .duo-side p {
+    font-size: 7px;
+  }
+
+  .footer {
+    font-size: 6px;
+  }
+}
+
+/* SHORT LANDSCAPE SCREEN */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .page {
+    padding: 4px 10px;
+    grid-template-rows: 23px 43px minmax(0, 1fr) 12px;
+    gap: 3px;
+  }
+
+  .profile-photo {
+    height: 11vh;
+    min-height: 35px;
+  }
+
+  .profile-facts {
+    padding: 4px 0;
+    margin-top: 4px;
+  }
+
+  .profile-description {
+    margin: 4px 0;
+    line-height: 1.35;
+  }
+
+  .center {
+    grid-template-rows: minmax(0, 1.1fr) minmax(0, .9fr) 35px;
+    gap: 4px;
+  }
+}
 </style>
 </head>
 
