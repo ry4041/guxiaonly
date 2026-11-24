@@ -1,35 +1,26 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ffffff">
-
 <title>TheLgg_ × TheXTY_ | Duo Archive</title>
 
 <style>
 :root {
-  --bg: #ffffff;
-  --white: #ffffff;
+  --bg: #fff;
   --ink: #252725;
-  --muted: #858981;
-  --line: #e8e9e5;
-
+  --muted: #92958e;
+  --line: #e9eae6;
   --green: #91ad91;
   --green-dark: #456b4e;
-  --green-light: #eaf0e7;
-
+  --green-light: #edf3eb;
   --red: #c47770;
   --red-dark: #984e4b;
-  --red-light: #f5eae7;
-
-  --system-font:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+  --red-light: #f7eeeb;
+  --system-font: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -37,571 +28,453 @@
   font-family: var(--system-font) !important;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: #ffffff;
+  background: #fff;
   color: var(--ink);
-  font-family: var(--system-font);
   -webkit-font-smoothing: antialiased;
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 .page {
-  width: min(1380px, calc(100% - 64px));
-  margin: auto;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  padding: 18px 30px 12px;
+  display: grid;
+  grid-template-rows: 42px 84px minmax(0, 1fr) 22px;
+  gap: 11px;
+  overflow: hidden;
 }
 
 /* HEADER */
 
 .header {
-  height: 68px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid var(--line);
 }
 
 .logo {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
 }
 
-.logo .green {
-  color: var(--green-dark);
-}
+.green { color: var(--green-dark); }
+.red { color: var(--red-dark); }
 
-.logo .red {
-  color: var(--red-dark);
-}
-
-.header-info {
-  font-size: 9px;
+.header-right {
+  display: flex;
+  gap: 20px;
   color: var(--muted);
-  letter-spacing: 2px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
 }
 
-/* HERO */
+/* INTRO */
 
-.hero {
-  padding: 54px 0 30px;
-}
-
-.hero-top {
+.intro {
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  gap: 24px;
-  margin-bottom: 25px;
+  align-items: center;
+  min-width: 0;
+}
+
+.intro-left {
+  min-width: 0;
 }
 
 .eyebrow {
-  color: var(--muted);
   font-size: 9px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
 }
 
-.hero h1 {
-  font-size: clamp(37px, 6vw, 76px);
-  line-height: 1.05;
-  letter-spacing: -3px;
-  font-weight: 750;
-  margin: 15px 0 12px;
+.intro h1 {
+  margin: 5px 0 0;
+  font-size: clamp(24px, 3vw, 39px);
+  letter-spacing: -1.5px;
+  line-height: 1.1;
 }
 
-.hero h1 .cross {
-  color: #a5a59d;
+.intro h1 span {
+  color: #b7b8b1;
   font-weight: 400;
 }
 
-.hero-description {
-  max-width: 430px;
-  font-size: 12px;
-  line-height: 1.9;
-  color: var(--muted);
-  margin: 0;
-}
-
-.hero-number {
-  text-align: right;
+.intro-description {
   color: var(--muted);
   font-size: 10px;
+  margin-top: 5px;
+}
+
+.intro-right {
+  text-align: right;
+  color: var(--muted);
+  font-size: 9px;
   line-height: 1.8;
   letter-spacing: 1.5px;
 }
 
-.hero-image {
-  width: 100%;
-  background: #fafafa;
-  overflow: hidden;
+/* MAIN GRID */
+
+.main {
+  min-height: 0;
+  display: grid;
+  grid-template-columns:
+    minmax(205px, 0.83fr)
+    minmax(0, 2fr)
+    minmax(205px, 0.83fr);
+  gap: 13px;
+}
+
+/* PROFILE */
+
+.profile {
+  min-width: 0;
+  min-height: 0;
   border: 1px solid var(--line);
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.hero-image img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.profile.green-profile {
+  border-top: 3px solid var(--green);
 }
 
-/* SECTION */
-
-.section {
-  margin-top: 48px;
+.profile.red-profile {
+  border-top: 3px solid var(--red);
 }
 
-.section-heading {
+.profile-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 12px;
-  margin-bottom: 18px;
-  border-bottom: 1px solid var(--ink);
-}
-
-.section-heading h2 {
-  font-size: 19px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: .2px;
-}
-
-.section-heading span {
-  font-size: 9px;
-  color: var(--muted);
+  font-size: 8px;
   letter-spacing: 1.5px;
+  color: var(--muted);
 }
 
-/* PROFILE LAYOUT */
-
-.profile-layout {
-  display: grid;
-  grid-template-columns: 255px minmax(0, 1fr) 255px;
-  gap: 16px;
-  align-items: stretch;
-}
-
-.profile-card {
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 14px;
-  min-width: 0;
+.profile-number {
+  font-size: 9px;
 }
 
 .profile-photo {
   width: 100%;
+  height: clamp(125px, 23vh, 205px);
+  margin: 8px auto;
   background: #fff;
   overflow: hidden;
-  margin-bottom: 16px;
 }
 
 .profile-photo img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: contain;
 }
 
 .profile-name {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
+  justify-content: space-between;
+  gap: 5px;
 }
 
-.profile-name h3 {
+.profile-name h2 {
   margin: 0;
-  font-size: 24px;
-  font-weight: 750;
-}
-
-.profile-name .number {
-  font-size: 9px;
-  color: var(--muted);
+  font-size: clamp(18px, 1.8vw, 25px);
+  letter-spacing: -0.8px;
 }
 
 .profile-role {
-  font-size: 9px;
-  letter-spacing: 1.2px;
-  margin-bottom: 17px;
-  color: var(--muted);
-  text-transform: uppercase;
+  margin-top: 4px;
+  font-size: 8px;
+  letter-spacing: 1.5px;
 }
 
-.green-card .profile-role {
+.green-profile .profile-role {
   color: var(--green-dark);
 }
 
-.red-card .profile-role {
+.red-profile .profile-role {
   color: var(--red-dark);
 }
 
 .profile-facts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px 8px;
-  padding: 14px 0;
+  gap: 10px 8px;
+  padding: 12px 0;
+  margin-top: 12px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .fact small {
   display: block;
-  font-size: 8px;
   color: var(--muted);
+  font-size: 7px;
   letter-spacing: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   text-transform: uppercase;
 }
 
 .fact strong {
   display: block;
-  font-size: 10px;
+  font-size: 9px;
+  line-height: 1.45;
   font-weight: 650;
-  line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
 .profile-description {
-  font-size: 11px;
-  color: #696d65;
-  line-height: 1.85;
-  margin: 15px 0;
+  font-size: 9px;
+  line-height: 1.8;
+  color: #74786f;
+  margin: 11px 0;
 }
 
-.profile-tags {
+.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  margin-top: auto;
 }
 
 .tag {
   padding: 5px 7px;
-  font-size: 8px;
-  border: 1px solid var(--line);
-  color: var(--muted);
+  font-size: 7px;
+  letter-spacing: .5px;
 }
 
-.green-card .tag {
-  background: var(--green-light);
+.green-profile .tag {
   color: var(--green-dark);
-  border-color: #dce8d9;
+  background: var(--green-light);
 }
 
-.red-card .tag {
-  background: var(--red-light);
+.red-profile .tag {
   color: var(--red-dark);
-  border-color: #efdbd7;
+  background: var(--red-light);
 }
 
 /* CENTER */
 
-.center-content {
+.center {
   min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.center-cover {
-  border: 1px solid var(--line);
-  overflow: hidden;
-  background: #fafafa;
-}
-
-.center-cover img {
-  width: 100%;
-  height: auto;
-}
-
-.center-caption {
-  padding: 13px 15px;
-  background: #fff;
-}
-
-.center-caption small {
-  font-size: 8px;
-  color: var(--muted);
-  letter-spacing: 1.5px;
-}
-
-.center-caption h3 {
-  font-size: 19px;
-  margin: 7px 0;
-}
-
-.center-caption p {
-  font-size: 10px;
-  line-height: 1.8;
-  color: var(--muted);
-  margin: 0;
-}
-
-.quote-box {
-  border: 1px solid var(--line);
-  padding: 20px;
-  background: #fff;
-}
-
-.quote-box small {
-  font-size: 8px;
-  color: var(--muted);
-  letter-spacing: 1.5px;
-}
-
-.quote-box p {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.8;
-  margin: 12px 0 0;
-}
-
-/* DUO SECTION */
-
-.duo-info {
+  min-height: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-rows:
+    minmax(0, 1.1fr)
+    minmax(0, 0.9fr)
+    68px;
+  gap: 10px;
 }
 
-.duo-item {
+.main-visual {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: #f7f7f5;
   border: 1px solid var(--line);
-  padding: 19px;
-  background: #fff;
 }
 
-.duo-item small {
-  color: var(--muted);
+.main-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.visual-label {
+  position: absolute;
+  left: 13px;
+  bottom: 12px;
+  padding: 7px 11px;
+  background: rgba(255,255,255,.88);
   font-size: 8px;
   letter-spacing: 1.5px;
-}
-
-.duo-item h3 {
-  font-size: 17px;
-  margin: 12px 0 8px;
-}
-
-.duo-item p {
-  font-size: 10px;
-  color: var(--muted);
-  line-height: 1.8;
-  margin: 0;
 }
 
 /* GALLERY */
 
 .gallery {
   display: grid;
-  grid-template-columns: 1.25fr .75fr .75fr;
-  gap: 14px;
-  align-items: start;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  min-height: 0;
 }
 
-.gallery-column {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.gallery-image {
-  border: 1px solid var(--line);
-  background: #fafafa;
+.gallery-item {
+  min-width: 0;
+  min-height: 0;
+  position: relative;
   overflow: hidden;
+  border: 1px solid var(--line);
+  background: #f8f8f7;
 }
 
-.gallery-image img {
+.gallery-item img {
   width: 100%;
-  height: auto;
-  transition: transform .5s ease;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
 }
 
-.gallery-image:hover img {
-  transform: scale(1.015);
+.gallery-item:hover img {
+  transform: scale(1.04);
 }
 
 .gallery-caption {
-  padding: 10px 12px;
-  border-top: 1px solid var(--line);
-  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 7px 5px;
+  background: rgba(255,255,255,.88);
+  font-size: 7px;
+  text-align: center;
+  letter-spacing: .5px;
 }
 
-.gallery-caption small {
-  font-size: 8px;
-  color: var(--muted);
-  letter-spacing: 1px;
-}
+/* DUO STATEMENT */
 
-/* GAME ARCHIVE */
-
-.game-grid {
+.duo-statement {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.game-card {
   border: 1px solid var(--line);
-  background: #fff;
+  min-height: 0;
 }
 
-.game-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.duo-side {
+  padding: 9px 13px;
+  min-width: 0;
 }
 
-.game-card p {
-  margin: 0;
-  padding: 12px;
-  font-size: 9px;
-  letter-spacing: 1px;
+.duo-side + .duo-side {
+  border-left: 1px solid var(--line);
+}
+
+.duo-side small {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 1.5px;
   color: var(--muted);
+}
+
+.duo-side strong {
+  display: block;
+  font-size: 11px;
+  margin: 5px 0 3px;
+}
+
+.duo-side p {
+  font-size: 8px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
 }
 
 /* FOOTER */
 
 .footer {
-  margin-top: 60px;
-  padding: 24px 0;
-  border-top: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  font-size: 9px;
+  align-items: center;
+  border-top: 1px solid var(--line);
   color: var(--muted);
-  letter-spacing: 1px;
+  font-size: 7px;
+  letter-spacing: 1.2px;
 }
 
 .footer strong {
   color: var(--ink);
 }
 
-/* RESPONSIVE */
+/* SHORT SCREEN */
 
-@media(max-width:950px) {
-  .profile-layout {
-    grid-template-columns: 210px minmax(0, 1fr) 210px;
-    gap: 10px;
-  }
-
-  .profile-card {
-    padding: 10px;
-  }
-
-  .profile-name h3 {
-    font-size: 20px;
-  }
-
-  .profile-facts {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media(max-width:700px) {
+@media (max-height: 700px) and (min-width: 761px) {
   .page {
-    width: calc(100% - 28px);
+    padding: 10px 22px 8px;
+    grid-template-rows: 34px 65px minmax(0, 1fr) 18px;
+    gap: 7px;
   }
 
-  .header {
-    height: 58px;
+  .main {
+    gap: 9px;
   }
 
-  .header-info {
-    font-size: 8px;
-  }
-
-  .hero {
-    padding-top: 36px;
-  }
-
-  .hero-top {
-    display: block;
-  }
-
-  .hero-number {
-    text-align: left;
-    margin-top: 15px;
-  }
-
-  .hero h1 {
-    font-size: clamp(38px, 10vw, 58px);
-    letter-spacing: -2px;
-  }
-
-  .hero-image {
-    margin-top: 20px;
-  }
-
-  .section {
-    margin-top: 36px;
-  }
-
-  .profile-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .profile-card {
-    padding: 14px;
+  .profile {
+    padding: 9px;
   }
 
   .profile-photo {
-    max-width: 320px;
-    margin: 0 auto 14px;
+    height: clamp(100px, 19vh, 145px);
   }
 
   .profile-facts {
-    grid-template-columns: 1fr 1fr;
+    padding: 8px 0;
+    gap: 7px;
   }
 
   .profile-description {
-    font-size: 11px;
+    margin: 7px 0;
   }
 
-  .center-content {
-    order: -1;
-  }
-
-  .duo-info {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .gallery-column:first-child {
-    grid-column: span 2;
-  }
-
-  .game-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer {
-    flex-direction: column;
+  .center {
+    gap: 7px;
+    grid-template-rows: minmax(0, 1.1fr) minmax(0, .9fr) 58px;
   }
 }
 
-@media(max-width:390px) {
-  .duo-info {
-    grid-template-columns: 1fr;
+/* MOBILE LANDSCAPE */
+
+@media (max-width: 760px) {
+  .page {
+    min-width: 900px;
+    padding: 10px 16px 8px;
+    grid-template-rows: 35px 65px minmax(0, 1fr) 18px;
+    gap: 7px;
   }
 
-  .gallery {
-    grid-template-columns: 1fr;
+  .main {
+    grid-template-columns: 210px minmax(0, 1fr) 210px;
+    gap: 9px;
   }
 
-  .gallery-column:first-child {
-    grid-column: auto;
+  .profile {
+    padding: 9px;
+  }
+
+  .profile-photo {
+    height: 19vh;
+  }
+
+  .profile-facts {
+    padding: 8px 0;
+    gap: 7px;
+  }
+
+  .profile-description {
+    font-size: 8px;
+  }
+
+  .center {
+    gap: 7px;
+    grid-template-rows: minmax(0, 1.1fr) minmax(0, .9fr) 58px;
   }
 }
 </style>
@@ -620,328 +493,259 @@ img {
       <span class="red">TheXTY_</span>
     </div>
 
-    <div class="header-info">
-      UNOFFICIAL FAN ARCHIVE · 2026
+    <div class="header-right">
+      <span>DUO ARCHIVE</span>
+      <span>VOL. 001</span>
+      <span>2026</span>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- INTRO -->
 
-  <section class="hero">
-
-    <div class="hero-top">
-      <div>
-        <div class="eyebrow">A STUDY OF TWO</div>
-
-        <h1>
-          TheLgg_
-          <span class="cross">×</span>
-          TheXTY_
-        </h1>
-
-        <p class="hero-description">
-          Two different personalities, two signature colors,
-          and a collection of moments worth remembering.
-          Welcome to their little archive.
-        </p>
-      </div>
-
-      <div class="hero-number">
-        VOL. 001<br>
-        GREEN × RED<br>
-        DUO COLLECTION
+  <section class="intro">
+    <div class="intro-left">
+      <div class="eyebrow">A STUDY OF TWO · GREEN × RED</div>
+      <h1>
+        TheLgg_ <span>×</span> TheXTY_
+      </h1>
+      <div class="intro-description">
+        Two different personalities, two signature colors,
+        and a collection of moments worth remembering.
       </div>
     </div>
 
-    <div class="hero-image">
-      <img src="./IMG_2321.jpeg"
-           alt="TheLgg and TheXTY duo illustration">
+    <div class="intro-right">
+      TWO CHARACTERS<br>
+      ONE SHARED ARCHIVE<br>
+      EST. 2026
     </div>
-
   </section>
 
-  <!-- PROFILES -->
+  <!-- MAIN CONTENT -->
 
-  <section class="section">
+  <main class="main">
 
-    <div class="section-heading">
-      <h2>01 / CHARACTER PROFILE</h2>
-      <span>INDIVIDUAL FILES</span>
-    </div>
+    <!-- LEFT PROFILE -->
 
-    <div class="profile-layout">
+    <article class="profile green-profile">
 
-      <!-- LGG -->
-
-      <article class="profile-card green-card">
-
-        <div class="profile-photo">
-          <img src="./IMG_2300.png"
-               alt="TheLgg profile artwork">
-        </div>
-
-        <div class="profile-name">
-          <h3>TheLgg_</h3>
-          <span class="number">NO.001</span>
-        </div>
-
-        <div class="profile-role">
-          THE GREEN REAPER
-        </div>
-
-        <div class="profile-facts">
-
-          <div class="fact">
-            <small>Birthday</small>
-            <strong>Nov 30</strong>
-          </div>
-
-          <div class="fact">
-            <small>Height</small>
-            <strong>171 cm</strong>
-          </div>
-
-          <div class="fact">
-            <small>Origin</small>
-            <strong>Taizhou, Zhejiang</strong>
-          </div>
-
-          <div class="fact">
-            <small>Specialty</small>
-            <strong>FPS Prodigy</strong>
-          </div>
-
-          <div class="fact">
-            <small>Nickname</small>
-            <strong>Matcha-Green Kitten</strong>
-          </div>
-
-          <div class="fact">
-            <small>Role</small>
-            <strong>XTY's Co-streamer</strong>
-          </div>
-
-        </div>
-
-        <p class="profile-description">
-          A matcha-green kitten with extraordinary FPS instincts.
-          Known as the Green Reaper, and a good little brother
-          in this little duo.
-        </p>
-
-        <div class="profile-tags">
-          <span class="tag">FPS</span>
-          <span class="tag">GREEN</span>
-          <span class="tag">LITTLE BROTHER</span>
-        </div>
-
-      </article>
-
-      <!-- CENTER -->
-
-      <div class="center-content">
-
-        <div class="center-cover">
-          <img src="./IMG_2321.jpeg"
-               alt="The duo together">
-
-          <div class="center-caption">
-            <small>THE TWO OF US · MAIN VISUAL</small>
-            <h3>Different worlds, one shared screen.</h3>
-            <p>
-              A little collection of streams, adventures,
-              and everything in between.
-            </p>
-          </div>
-        </div>
-
-        <div class="quote-box">
-          <small>THE DUO STATEMENT</small>
-          <p>
-            One is the Green Reaper.
-            The other is the Supreme Boss.
-            Together, they make their own story.
-          </p>
-        </div>
-
+      <div class="profile-top">
+        <span>CHARACTER PROFILE</span>
+        <span class="profile-number">NO.001</span>
       </div>
 
-      <!-- XTY -->
+      <div class="profile-photo">
+        <img src="./IMG_2300.png"
+             alt="TheLgg profile artwork">
+      </div>
 
-      <article class="profile-card red-card">
+      <div class="profile-name">
+        <h2>TheLgg_</h2>
+        <span class="green profile-number">GREEN</span>
+      </div>
 
-        <div class="profile-photo">
-          <img src="./IMG_2301.png"
-               alt="TheXTY profile artwork">
+      <div class="profile-role">
+        THE GREEN REAPER
+      </div>
+
+      <div class="profile-facts">
+        <div class="fact">
+          <small>Birthday</small>
+          <strong>Nov 30</strong>
         </div>
 
-        <div class="profile-name">
-          <h3>TheXTY_</h3>
-          <span class="number">NO.002</span>
+        <div class="fact">
+          <small>Height</small>
+          <strong>171 cm</strong>
         </div>
 
-        <div class="profile-role">
-          THE SUPREME BOSS
+        <div class="fact">
+          <small>Origin</small>
+          <strong>Taizhou, Zhejiang</strong>
         </div>
 
-        <div class="profile-facts">
-
-          <div class="fact">
-            <small>Birthday</small>
-            <strong>Oct 6, 2000</strong>
-          </div>
-
-          <div class="fact">
-            <small>Origin</small>
-            <strong>Langfang, Hebei</strong>
-          </div>
-
-          <div class="fact">
-            <small>Platform</small>
-            <strong>Bilibili</strong>
-          </div>
-
-          <div class="fact">
-            <small>Milestone</small>
-            <strong>10,000 Captains</strong>
-          </div>
-
-          <div class="fact">
-            <small>Title</small>
-            <strong>Master of Tianmen</strong>
-          </div>
-
-          <div class="fact">
-            <small>Identity</small>
-            <strong>The Supreme Boss</strong>
-          </div>
-
+        <div class="fact">
+          <small>Specialty</small>
+          <strong>FPS Prodigy</strong>
         </div>
 
-        <p class="profile-description">
-          The Master of Tianmen.
-          A Bilibili streamer with 10,000 captains,
-          carrying the presence of a supreme boss.
-        </p>
-
-        <div class="profile-tags">
-          <span class="tag">BILIBILI</span>
-          <span class="tag">RED</span>
-          <span class="tag">10K CAPTAINS</span>
+        <div class="fact">
+          <small>Nickname</small>
+          <strong>Matcha-Green Kitten</strong>
         </div>
 
-      </article>
+        <div class="fact">
+          <small>Role</small>
+          <strong>XTY's Co-streamer</strong>
+        </div>
+      </div>
 
-    </div>
+      <p class="profile-description">
+        A matcha-green kitten with extraordinary FPS instincts.
+        Known as the Green Reaper, and a good little brother
+        in this little duo.
+      </p>
 
-  </section>
+      <div class="tags">
+        <span class="tag">FPS</span>
+        <span class="tag">GREEN</span>
+        <span class="tag">LITTLE BROTHER</span>
+      </div>
 
-  <!-- DUO -->
+    </article>
 
-  <section class="section">
+    <!-- CENTER CONTENT -->
 
-    <div class="section-heading">
-      <h2>02 / THE DUO</h2>
-      <span>TWO PERSONALITIES</span>
-    </div>
+    <section class="center">
 
-    <div class="duo-info">
+      <!-- MAIN VISUAL: IMAGE 3 -->
 
-      <article class="duo-item">
-        <small>THE GREEN SIDE</small>
-        <h3>The Green Reaper</h3>
-        <p>
-          Quick instincts, FPS talent, and a matcha-green signature.
-          The little brother of this duo.
-        </p>
-      </article>
+      <div class="main-visual">
+        <img src="./IMG_2321.jpeg"
+             alt="TheLgg and TheXTY together">
 
-      <article class="duo-item">
-        <small>THE RED SIDE</small>
-        <h3>The Supreme Boss</h3>
-        <p>
-          Master of Tianmen, Bilibili streamer,
-          and the one with 10,000 captains.
-        </p>
-      </article>
+        <div class="visual-label">
+          THE TWO OF US · MAIN VISUAL
+        </div>
+      </div>
 
-    </div>
+      <!-- IMAGE ARCHIVE: IMAGES 4-7 -->
 
-  </section>
+      <div class="gallery">
 
-  <!-- GALLERY -->
-
-  <section class="section">
-
-    <div class="section-heading">
-      <h2>03 / VISUAL ARCHIVE</h2>
-      <span>SELECTED MEMORIES</span>
-    </div>
-
-    <div class="gallery">
-
-      <div class="gallery-column">
-
-        <div class="gallery-image">
+        <div class="gallery-item">
           <img src="./IMG_3850.png"
-               alt="The duo under the starry sky">
+               alt="Under the same sky">
           <div class="gallery-caption">
-            <small>01 / UNDER THE SAME SKY</small>
+            01 / UNDER THE SAME SKY
           </div>
         </div>
 
-      </div>
-
-      <div class="gallery-column">
-
-        <div class="gallery-image">
+        <div class="gallery-item">
           <img src="./未命名作品.jpeg"
-               alt="Halloween duo illustration">
+               alt="Halloween illustration">
           <div class="gallery-caption">
-            <small>02 / HALLOWEEN</small>
+            02 / HALLOWEEN
           </div>
         </div>
 
-        <div class="gallery-image">
+        <div class="gallery-item">
           <img src="./a78567f5b4db48b15e0fbd5525a153.jpeg"
-               alt="Green and red duo model">
+               alt="Little figures">
           <div class="gallery-caption">
-            <small>03 / THE LITTLE FIGURES</small>
+            03 / LITTLE FIGURES
           </div>
         </div>
 
-      </div>
-
-      <div class="gallery-column">
-
-        <div class="gallery-image">
+        <div class="gallery-item">
           <img src="./93af518399fe0130f734c80f1bb454.jpeg"
-               alt="Minecraft gameplay memory">
+               alt="Minecraft gameplay">
           <div class="gallery-caption">
-            <small>04 / IN-GAME MEMORY</small>
+            04 / IN-GAME MEMORY
           </div>
         </div>
 
       </div>
 
-    </div>
+      <!-- DUO STATEMENT -->
 
-  </section>
+      <div class="duo-statement">
+
+        <div class="duo-side">
+          <small>THE GREEN SIDE</small>
+          <strong class="green">The Green Reaper</strong>
+          <p>Quick instincts · FPS talent · Matcha green</p>
+        </div>
+
+        <div class="duo-side">
+          <small>THE RED SIDE</small>
+          <strong class="red">The Supreme Boss</strong>
+          <p>Master of Tianmen · Bilibili · 10K Captains</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RIGHT PROFILE -->
+
+    <article class="profile red-profile">
+
+      <div class="profile-top">
+        <span>CHARACTER PROFILE</span>
+        <span class="profile-number">NO.002</span>
+      </div>
+
+      <div class="profile-photo">
+        <img src="./IMG_2301.png"
+             alt="TheXTY profile artwork">
+      </div>
+
+      <div class="profile-name">
+        <h2>TheXTY_</h2>
+        <span class="red profile-number">RED</span>
+      </div>
+
+      <div class="profile-role">
+        THE SUPREME BOSS
+      </div>
+
+      <div class="profile-facts">
+
+        <div class="fact">
+          <small>Birthday</small>
+          <strong>Oct 6, 2000</strong>
+        </div>
+
+        <div class="fact">
+          <small>Origin</small>
+          <strong>Langfang, Hebei</strong>
+        </div>
+
+        <div class="fact">
+          <small>Platform</small>
+          <strong>Bilibili</strong>
+        </div>
+
+        <div class="fact">
+          <small>Milestone</small>
+          <strong>10,000 Captains</strong>
+        </div>
+
+        <div class="fact">
+          <small>Title</small>
+          <strong>Master of Tianmen</strong>
+        </div>
+
+        <div class="fact">
+          <small>Identity</small>
+          <strong>The Supreme Boss</strong>
+        </div>
+
+      </div>
+
+      <p class="profile-description">
+        The Master of Tianmen.
+        A Bilibili streamer with 10,000 captains,
+        carrying the presence of a supreme boss.
+      </p>
+
+      <div class="tags">
+        <span class="tag">BILIBILI</span>
+        <span class="tag">RED</span>
+        <span class="tag">10K CAPTAINS</span>
+      </div>
+
+    </article>
+
+  </main>
 
   <!-- FOOTER -->
 
   <footer class="footer">
-
     <strong>TheLgg_ × TheXTY_</strong>
-
-    <span>
-      A FAN-MADE ARCHIVE · MADE WITH ADMIRATION
-    </span>
-
-    <span>
-      END OF FILE · 001
-    </span>
-
+    <span>A FAN-MADE ARCHIVE · MADE WITH ADMIRATION</span>
+    <span>END OF FILE · 001</span>
   </footer>
 
 </div>
